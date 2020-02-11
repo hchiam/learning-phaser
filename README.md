@@ -6,6 +6,10 @@ Learning the updated version 3 <https://github.com/photonstorm/phaser> (my old r
 
 Phaser 3 Webpack Project Template: <https://github.com/photonstorm/phaser3-project-template>
 
+Todo:
+
+- [ ] [Example](https://github.com/hchiam/learning-phaser/issues/1) combining [_2Dnote](https://github.com/hchiam/_2Dnote)
+
 ---
 
 Other notes:
