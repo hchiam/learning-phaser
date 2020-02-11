@@ -2,7 +2,7 @@
   "name": "learning-phaser",
   "version": "1.0.0",
   "private": true,
-  "description": "Learning the updated version https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame) (This file was first created using the Yeoman generator generator-hchiam-learning: https://www.npmjs.com/package/generator-hchiam-learning",
+  "description": "Learning the updated version 3 https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame) (This file was first created using the Yeoman generator generator-hchiam-learning: https://www.npmjs.com/package/generator-hchiam-learning",
   "main": "src/index.js",
   "scripts": {
     "start": "open src/index.html & open http://localhost:8000",

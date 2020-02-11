@@ -2,7 +2,7 @@
 
 Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
-Learning the updated version https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame)
+Learning the updated version 3 https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame)
 
 [![generator-hchiam-learning](https://img.shields.io/badge/built%20with-generator--hchiam--learning-brightgreen.svg)](https://github.com/hchiam/generator-hchiam-learning) [![Build Status](https://travis-ci.org/hchiam/learning-phaser.svg?branch=master)](https://travis-ci.org/hchiam/learning-phaser) [![Coverage Status](https://coveralls.io/repos/github/hchiam/learning-phaser/badge.svg?branch=master)](https://coveralls.io/github/hchiam/learning-phaser?branch=master)
 
