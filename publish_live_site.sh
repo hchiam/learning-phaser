@@ -15,6 +15,10 @@ function openInChrome() {
   open -na "Google Chrome" --args -incognito $surgePageToPublishTo
 }
 
+function openInFirefox() {
+  open -a "Firefox" $surgePageToPublishTo
+}
+
 installSurgeIfMissing
 
 read -p "Use default $folderToUse folder? " useDefaultFolder
@@ -29,13 +33,13 @@ if [[ $useDefaultFolder =~ $re ]]; then
   echo "I'll take that as a yes. :)"
   echo "Publishing to $surgePageToPublishTo"
   publishToSurge
-  openInChrome
+  openInFirefox
 else
   echo "I'll take that as a no. :)"
   read -p "What folder to use? " folderToUse
   read -p "What surge.sh page to publish to? " surgePageToPublishTo
   publishToSurge
-  openInChrome
+  openInFirefox
 fi
 
 # This file was first created using the Yeoman generator

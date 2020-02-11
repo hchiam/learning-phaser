@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import logoImg from './assets/logo.png';
+import css from './style.css';
 
 const config = {
   type: Phaser.AUTO,
