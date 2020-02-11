@@ -23,7 +23,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run reminder; npm run lint && npm test; npm run reminder;"
+      "pre-commit": "# npm run reminder; npm run lint && npm test; npm run reminder;"
     }
   }
 }
