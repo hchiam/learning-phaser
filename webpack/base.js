@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['css-loader', 'style-loader'],
       },
     ],
   },
@@ -40,9 +40,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: './style.css',
     }),
   ],
 };
