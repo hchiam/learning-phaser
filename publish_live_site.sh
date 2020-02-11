@@ -1,4 +1,4 @@
-folderToUse=test-project/dist
+folderToUse=dist
 surgePageToPublishTo=https://hchiam-phaser-test.surge.sh
 
 function installSurgeIfMissing() {

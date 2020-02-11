@@ -14,23 +14,6 @@ dist/
 /npm-debug.log
 
 # more stuff
-coverage
-your_first_commit.sh
-# System and IDE files
-Thumbs.db
-.DS_Store
-.idea
-*.suo
-*.sublime-project
-*.sublime-workspace
-
-# Vendors
-node_modules/
-
-# Build
-dist/
-/npm-debug.log
-
-# more stuff
+dist
 coverage
 your_first_commit.sh

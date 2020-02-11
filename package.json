@@ -5,8 +5,12 @@
   "description": "Learning the updated version 3 https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame) (This file was first created using the Yeoman generator generator-hchiam-learning: https://www.npmjs.com/package/generator-hchiam-learning",
   "main": "src/index.js",
   "scripts": {
-    "start": "open src/index.html & open http://localhost:8000",
-    "build": "bash publish_live_site.sh",
+    "build": "yarn webpack-build; yarn surge-build",
+    "start": "yarn webpack-start",
+    "webpack-build": "webpack --config webpack/prod.js",
+    "webpack-start": "webpack-dev-server --config webpack/base.js --open",
+    "surge-build": "bash publish_live_site.sh",
+    "surge-start": "yarn open",
     "test": "jest --passWithNoTests",
     "lint": "eslint src/*.js --max-warnings=0",
     "fix": "eslint --fix src/*.js",
@@ -15,11 +19,26 @@
   },
   "author": "hchiam",
   "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.20.1"
+  },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.4.0",
     "eslint-config-google": "^0.14.0",
+    "file-loader": "^4.2.0",
     "husky": "^3.0.9",
-    "jest-cli": "^24.9.0"
+    "html-webpack-plugin": "^3.2.0",
+    "raw-loader": "^3.1.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "jest-cli": "^24.9.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   },
   "husky": {
     "hooks": {
