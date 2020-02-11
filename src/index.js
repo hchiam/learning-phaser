@@ -3,7 +3,7 @@
 
 import Phaser from 'phaser';
 import logoImg from './assets/logo.png';
-import css from './style.css';
+import css from './style.css'; // eslint-disable-line no-unused-vars
 
 const config = {
   type: Phaser.AUTO,
