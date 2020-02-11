@@ -1,5 +1,5 @@
 folderToUse=src
-surgePageToPublishTo=hchiam-phaser-test.surge.sh
+surgePageToPublishTo=https://hchiam-phaser-test.surge.sh
 
 function installSurgeIfMissing() {
   if ! [ -x "$(command -v surge)" ]; then
