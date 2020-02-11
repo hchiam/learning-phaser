@@ -25,7 +25,8 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['css-loader', 'style-loader'],
+        // need both, and in this order apparently:
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

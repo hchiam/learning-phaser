@@ -3,6 +3,7 @@
 
 import Phaser from 'phaser';
 import logoImg from './assets/logo.png';
+// apparently need to import this
 import css from './style.css'; // eslint-disable-line no-unused-vars
 
 const config = {
