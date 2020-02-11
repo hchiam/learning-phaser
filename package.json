@@ -1,0 +1,28 @@
+{
+  "name": "learning-phaser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Learning the updated version https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame) (This file was first created using the Yeoman generator generator-hchiam-learning: https://www.npmjs.com/package/generator-hchiam-learning",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "open src/index.html & open http://localhost:8000",
+    "build": "",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src/*.js --max-warnings=0",
+    "fix": "eslint --fix src/*.js",
+    "reminder": "echo; echo -e 'Reminders: Did you do \\033[1;34mnpm run my-build\\033[0m first? \nDo you need to \\033[1;34m[skip ci]\\033[0m?'; echo;"
+  },
+  "author": "hchiam",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^3.0.9",
+    "jest-cli": "^24.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run reminder; npm run lint && npm test; npm run reminder;"
+    }
+  }
+}
