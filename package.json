@@ -6,11 +6,12 @@
   "main": "src/index.js",
   "scripts": {
     "start": "open src/index.html & open http://localhost:8000",
-    "build": "",
+    "build": "surge src hchiam-phaser-test.surge.sh; npm run open;",
     "test": "jest --passWithNoTests",
     "lint": "eslint src/*.js --max-warnings=0",
     "fix": "eslint --fix src/*.js",
-    "reminder": "echo; echo -e 'Reminders: Did you do \\033[1;34mnpm run my-build\\033[0m first? \nDo you need to \\033[1;34m[skip ci]\\033[0m?'; echo;"
+    "reminder": "echo; echo -e 'Reminders: Did you do \\033[1;34mnpm run my-build\\033[0m first? \nDo you need to \\033[1;34m[skip ci]\\033[0m?'; echo;",
+    "open": "open -na \"Google Chrome\" --args -incognito hchiam-phaser-test.surge.sh"
   },
   "author": "hchiam",
   "license": "MIT",
