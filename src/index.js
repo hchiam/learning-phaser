@@ -29,12 +29,12 @@ function create() {
     alert('Image clicked!');
   });
 
-  // this.tweens.add({
-  //   targets: logo,
-  //   y: 450,
-  //   duration: 2000,
-  //   ease: 'Power2',
-  //   yoyo: true,
-  //   loop: -1,
-  // });
+  this.tweens.add({
+    targets: image,
+    y: 450,
+    duration: 2000,
+    ease: 'Power2',
+    yoyo: true,
+    loop: -1,
+  });
 }
