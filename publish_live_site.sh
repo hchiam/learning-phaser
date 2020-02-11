@@ -15,6 +15,8 @@ function openInChrome() {
   open -na "Google Chrome" --args -incognito $surgePageToPublishTo
 }
 
+installSurgeIfMissing
+
 read -p "Use default src folder? " useSrcFolder
 
 # keep asking until given a response
