@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "open src/index.html & open http://localhost:8000",
-    "build": "surge src hchiam-phaser-test.surge.sh; npm run open;",
+    "build": "bash publish_live_site.sh",
     "test": "jest --passWithNoTests",
     "lint": "eslint src/*.js --max-warnings=0",
     "fix": "eslint --fix src/*.js",
