@@ -1,13 +1,13 @@
 /* eslint-disable require-jsdoc */
 
-const {solutionWrapper} = require('./index.js');
+// const {solutionWrapper} = require('./index.js');
 
-describe('the solution', () => {
-  it('works', () => {
-    expect(solutionWrapper(1, 2))
-        .toStrictEqual(3);
-  });
-});
+// describe('the solution', () => {
+//   it('works', () => {
+//     expect(solutionWrapper(1, 2))
+//         .toStrictEqual(3);
+//   });
+// });
 
 // function ListNode(val) {
 //   this.val = val;
