@@ -25,7 +25,7 @@ done
 re='(y|Y)(es|up|eah)?'
 if [[ $useSrcFolder =~ $re ]]; then
   echo "I'll take that as a yes. :)"
-  echo "Publishing to hchiam-phaser-test.surge.sh"
+  echo "Publishing to $surgePageToPublishTo"
   publishToSurge
   openInChrome
 else
