@@ -8,6 +8,26 @@ Phaser 3 Webpack Project Template: <https://github.com/photonstorm/phaser3-proje
 
 More examples to learn from: <https://phaser.io/examples/v3>
 
+```bash
+yarn
+yarn build # and when prompted, enter y
+```
+
+```js
+// clickable image:
+function preload() {
+  this.load.image('logo', logoImg);
+}
+
+function create() {
+  const image = this.add.image(400, 150, 'logo');
+  image.setInteractive();
+  image.on('pointerdown', function(pointer) {
+    alert('Image clicked!');
+  });
+}
+```
+
 Todo:
 
 - [ ] [Example](https://github.com/hchiam/learning-phaser/issues/1) combining [_2Dnote](https://github.com/hchiam/_2Dnote)

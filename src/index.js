@@ -23,14 +23,18 @@ function preload() {
 }
 
 function create() {
-  const logo = this.add.image(400, 150, 'logo');
-
-  this.tweens.add({
-    targets: logo,
-    y: 450,
-    duration: 2000,
-    ease: 'Power2',
-    yoyo: true,
-    loop: -1,
+  const image = this.add.image(400, 150, 'logo');
+  image.setInteractive();
+  image.on('pointerdown', function(pointer) {
+    alert('Image clicked!');
   });
+
+  // this.tweens.add({
+  //   targets: logo,
+  //   y: 450,
+  //   duration: 2000,
+  //   ease: 'Power2',
+  //   yoyo: true,
+  //   loop: -1,
+  // });
 }

@@ -8,7 +8,7 @@
     "build": "yarn webpack-build; yarn surge-build",
     "start": "yarn webpack-start",
     "webpack-build": "webpack --config webpack/prod.js",
-    "webpack-start": "webpack-dev-server --config webpack/base.js --open",
+    "webpack-start": "echo; echo '(Will auto-reload upon file save.)'; echo; webpack-dev-server --config webpack/base.js --open;",
     "surge-build": "bash publish_live_site.sh",
     "surge-start": "yarn open",
     "test": "jest --passWithNoTests",
@@ -20,7 +20,7 @@
   "author": "hchiam",
   "license": "MIT",
   "dependencies": {
-    "phaser": "^3.20.1"
+    "phaser": "^3.22.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
