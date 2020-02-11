@@ -12,3 +12,7 @@ node_modules/
 # Build
 dist/
 /npm-debug.log
+
+# more stuff
+coverage
+your_first_commit.sh

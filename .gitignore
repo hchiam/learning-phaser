@@ -1,8 +1,36 @@
-node_modules
+# System and IDE files
+Thumbs.db
 .DS_Store
+.idea
+*.suo
+*.sublime-project
+*.sublime-workspace
+
+# Vendors
+node_modules/
+
+# Build
+dist/
+/npm-debug.log
+
+# more stuff
 coverage
 your_first_commit.sh
+# System and IDE files
+Thumbs.db
+.DS_Store
+.idea
+*.suo
+*.sublime-project
+*.sublime-workspace
 
-# This file was first created using the Yeoman generator
-#  generator-hchiam-learning:
-#  https://www.npmjs.com/package/generator-hchiam-learning
+# Vendors
+node_modules/
+
+# Build
+dist/
+/npm-debug.log
+
+# more stuff
+coverage
+your_first_commit.sh
