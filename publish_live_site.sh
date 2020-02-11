@@ -1,4 +1,4 @@
-folderToUse=src
+folderToUse=test-project/dist
 surgePageToPublishTo=https://hchiam-phaser-test.surge.sh
 
 function installSurgeIfMissing() {
@@ -17,15 +17,15 @@ function openInChrome() {
 
 installSurgeIfMissing
 
-read -p "Use default src folder? " useSrcFolder
+read -p "Use default $folderToUse folder? " useDefaultFolder
 
 # keep asking until given a response
-while [ -z "$useSrcFolder" ]; do
-  read -p "Use default src folder? " useSrcFolder
+while [ -z "$useDefaultFolder" ]; do
+  read -p "Use default $folderToUse folder? " useDefaultFolder
 done
 
 re='(y|Y)(es|up|eah)?'
-if [[ $useSrcFolder =~ $re ]]; then
+if [[ $useDefaultFolder =~ $re ]]; then
   echo "I'll take that as a yes. :)"
   echo "Publishing to $surgePageToPublishTo"
   publishToSurge
