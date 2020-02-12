@@ -4,9 +4,13 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 Learning the updated version 3 <https://github.com/photonstorm/phaser> (my old repo: <https://github.com/hchiam/phaserGame>)
 
-Phaser 3 Webpack Project Template: <https://github.com/photonstorm/phaser3-project-template>
+Phaser 3 webpack project template: <https://github.com/photonstorm/phaser3-project-template>
 
 More examples to learn from: <https://phaser.io/examples/v3>
+
+Phaser 3 guide: <https://phaser.io/tutorials/getting-started-phaser3/index>
+
+## Using this repo
 
 ```bash
 yarn
@@ -38,13 +42,9 @@ function create() {
 }
 ```
 
-Todo:
-
-- [ ] [Example](https://github.com/hchiam/learning-phaser/issues/1) combining [_2Dnote](https://github.com/hchiam/_2Dnote)
-
 ---
 
-Other notes:
+## Other notes
 
 [![generator-hchiam-learning](https://img.shields.io/badge/built%20with-generator--hchiam--learning-brightgreen.svg)](https://github.com/hchiam/generator-hchiam-learning) [![Build Status](https://travis-ci.org/hchiam/learning-phaser.svg?branch=master)](https://travis-ci.org/hchiam/learning-phaser) [![Coverage Status](https://coveralls.io/repos/github/hchiam/learning-phaser/badge.svg?branch=master)](https://coveralls.io/github/hchiam/learning-phaser?branch=master)
 
