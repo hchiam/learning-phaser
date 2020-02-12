@@ -3,6 +3,7 @@
 /* eslint-disable require-jsdoc */
 
 import Phaser from 'phaser';
+import instructions from './instructions'; // eslint-disable-line no-unused-vars
 import bomb from '../phaser3-tutorial-src/assets/bomb.png';
 import dude from '../phaser3-tutorial-src/assets/dude.png';
 import platform from '../phaser3-tutorial-src/assets/platform.png';
