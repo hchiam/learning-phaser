@@ -31,3 +31,8 @@ a:hover, a:focus {
 #phaser-container {
   display: inline-block;
 }
+
+canvas {
+  display: table;
+  margin: 0 auto;
+}
