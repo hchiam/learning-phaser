@@ -8,7 +8,7 @@ My live demo: <https://hchiam-phaser-demo.surge.sh/>
 
 Phaser 3 webpack project template: <https://github.com/photonstorm/phaser3-project-template>
 
-More examples to learn from: <https://phaser.io/examples/v3>
+More examples to learn from: <https://phaser.io/examples/v3> or <https://github.com/photonstorm/phaser3-examples>
 
 Phaser 3 guide: <https://phaser.io/tutorials/getting-started-phaser3/index>
 
