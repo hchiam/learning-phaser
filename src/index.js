@@ -35,8 +35,10 @@ let platforms;
 let player;
 let cursors; // for common keyboard listeners
 let stars;
+let bombs;
 let score = 0;
 let scoreText; // an object
+let gameOver = false;
 
 function preload() {
   this.load.image('sky', sky);
@@ -92,10 +94,12 @@ function create() {
     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
   });
 
+  bombs = this.physics.add.group();
+
+  const x = 16;
+  const y = 16;
   scoreText = this.add.text(
-      16,
-      16,
-      'score: 0',
+      x, y, 'score: 0',
       {
         fontSize: '32px',
         fill: '#000',
@@ -105,13 +109,18 @@ function create() {
   // can create collider "watchers" after create relevant groups/objects:
   this.physics.add.collider(player, platforms);
   this.physics.add.collider(stars, platforms);
-  // this.physics.add.collider(player, stars);
+  this.physics.add.collider(bombs, platforms);
+  this.physics.add.collider(player, bombs, hitBomb, null, this);
+  // collider: obj1, obj2, collideCallback, processCallback, callbackContext
 
   // special callback for overlap "watcher":
   this.physics.add.overlap(player, stars, collectStar, null, this);
+  // collider: obj1, obj2, collideCallback, processCallback, callbackContext
 }
 
 function update() {
+  if (gameOver) return;
+
   if (cursors.left.isDown) {
     player.setVelocityX(-160); // physics
     player.anims.play('left', true); // animation (see this.anims)
@@ -134,7 +143,50 @@ function update() {
 }
 
 function collectStar(player, star) {
+  player.setVelocityY(-100);
   star.disableBody(true, true);
+  // disableBody parameters: disableGameObject, hideGameObject
   score += 1;
   scoreText.setText('Score: ' + score);
+  generateBombs();
+}
+
+function hitBomb(player, bomb) {
+  // this.physics.pause();
+  player.setTint(0xff0000);
+  player.anims.play('turn');
+  gameOver = true;
+  platforms.children.iterate(function(child) {
+    child.disableBody(true, true);
+  });
+  stars.children.iterate(function(child) {
+    child.setCollideWorldBounds(false);
+  });
+  bombs.children.iterate(function(child) {
+    child.setCollideWorldBounds(false);
+  });
+  player.setCollideWorldBounds(false);
+}
+
+function generateBombs() {
+  if (stars.countActive(true) > 0) return;
+
+  // show all stars again:
+  stars.children.iterate(function(child) {
+    child.enableBody(true, child.x, 0, true, true);
+    // enableBody: reset, x, y, enableGameObject, showGameObject
+  });
+
+  let randomX;
+  if (player.x < 400) {
+    randomX = Phaser.Math.Between(400, 800);
+  } else {
+    randomX = Phaser.Math.Between(0, 400);
+  }
+
+  const bomb = bombs.create(randomX, 16, 'bomb');
+  bomb.setBounce(1);
+  bomb.setCollideWorldBounds(true);
+  bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+  // setVelocity: x, y
 }
