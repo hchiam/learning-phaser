@@ -12,6 +12,9 @@ const config = {
   parent: 'phaser-example',
   width: 800,
   height: 600,
+  physics: {
+    default: 'impact',
+  },
   scene: {
     preload: preload,
     create: create,
@@ -26,20 +29,26 @@ function preload() {
 }
 
 function create() {
-  const image = this.add.image(400, 150, 'logo');
+  const image = this.impact.add.image(0, 150, 'logo');
+  const image2 = this.impact.add.image(500, 150, 'logo');
   image.setInteractive();
   image.on('pointerdown', function(pointer) {
     alert('Image clicked!');
   });
 
-  this.tweens.add({
-    targets: image,
-    y: 450,
-    duration: 2000,
-    ease: 'Power2',
-    yoyo: true,
-    loop: -1,
-  });
+  image.setTypeA().setCheckAgainstB().setActiveCollision().setMaxVelocity(300);
+  image2.setTypeB().setCheckAgainstA().setFixedCollision();
+  image.setVelocityX(300);
+  this.impact.world.on('collide', collide);
+
+  // this.tweens.add({
+  //   targets: image,
+  //   y: 450,
+  //   duration: 2000,
+  //   ease: 'Power2',
+  //   yoyo: true,
+  //   loop: -1,
+  // });
 
   _2DNote.setAs2DArea(document.getElementsByTagName('canvas'));
   this.input.keyboard.on('keydown-SPACE', function() {
@@ -72,4 +81,8 @@ function create() {
   this.input.keyboard.on('keydown-D', function() {
     alert('You hit the D key');
   });
+}
+
+function collide(bodyA, bodyB, axis) {
+  bodyA.gameObject.setTint(0xff0000);
 }
