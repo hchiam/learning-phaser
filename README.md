@@ -4,6 +4,8 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 Learning the updated version 3 <https://github.com/photonstorm/phaser> (my old repo: <https://github.com/hchiam/phaserGame>)
 
+My live demo: <https://hchiam-phaser-demo.surge.sh/>
+
 Phaser 3 webpack project template: <https://github.com/photonstorm/phaser3-project-template>
 
 More examples to learn from: <https://phaser.io/examples/v3>
