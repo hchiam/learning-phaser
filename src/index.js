@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 /* eslint-disable no-invalid-this */
 /* eslint-disable require-jsdoc */
 
@@ -33,6 +34,9 @@ const game = new Phaser.Game(config);
 let platforms;
 let player;
 let cursors; // for common keyboard listeners
+let stars;
+let score = 0;
+let scoreText; // an object
 
 function preload() {
   this.load.image('sky', sky);
@@ -78,8 +82,33 @@ function create() {
   // convenient way to add common key listeners:
   cursors = this.input.keyboard.createCursorKeys();
 
-  // can create collider "watcher" after create relevant groups/objects:
+  stars = this.physics.add.group({
+    key: 'star',
+    repeat: 11,
+    setXY: {x: 12, y: 0, stepX: 70},
+  });
+  stars.children.iterate(function(child) {
+    // set random bounce value:
+    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+  });
+
+  scoreText = this.add.text(
+      16,
+      16,
+      'score: 0',
+      {
+        fontSize: '32px',
+        fill: '#000',
+      },
+  );
+
+  // can create collider "watchers" after create relevant groups/objects:
   this.physics.add.collider(player, platforms);
+  this.physics.add.collider(stars, platforms);
+  // this.physics.add.collider(player, stars);
+
+  // special callback for overlap "watcher":
+  this.physics.add.overlap(player, stars, collectStar, null, this);
 }
 
 function update() {
@@ -90,8 +119,9 @@ function update() {
     player.setVelocityX(160); // physics
     player.anims.play('right', true); // animation (see this.anims)
   } else if (cursors.down.isDown) {
-    // player.setVelocityY(300); // physics
-    // player.anims.play('turn', true); // animation (see this.anims)
+    // smash down!
+    player.setVelocityY(300); // physics
+    player.anims.play('turn', true); // animation (see this.anims)
   } else {
     player.setVelocityX(0); // physics
     player.anims.play('turn'); // animation (see this.anims)
@@ -101,4 +131,10 @@ function update() {
   if (cursors.up.isDown && isTouchingGround) {
     player.setVelocityY(-330); // physics
   }
+}
+
+function collectStar(player, star) {
+  star.disableBody(true, true);
+  score += 1;
+  scoreText.setText('Score: ' + score);
 }
