@@ -10,8 +10,18 @@ More examples to learn from: <https://phaser.io/examples/v3>
 
 ```bash
 yarn
+yarn webpack-build
+yarn start
+```
+
+Or:
+
+```bash
+yarn
 yarn build # and when prompted, enter y
 ```
+
+Example code to make image respond to clicks:
 
 ```js
 // clickable image:
