@@ -18,11 +18,14 @@ const config = {
   scene: {
     preload: preload,
     create: create,
+    update: update,
   },
 };
 
 // eslint-disable-next-line no-unused-vars
 const game = new Phaser.Game(config);
+let graphics;
+let mouseCircle;
 
 function preload() {
   this.load.image('logo', logoImg);
@@ -81,8 +84,23 @@ function create() {
   this.input.keyboard.on('keydown-D', function() {
     alert('You hit the D key');
   });
+
+  graphics = this.add.graphics();
+  mouseCircle = new Phaser.Geom.Circle(0, 0, 48);
+  this.input.on('pointermove', function(pointer) {
+    mouseCircle.x = pointer.x;
+    mouseCircle.y = pointer.y;
+  });
 }
 
 function collide(bodyA, bodyB, axis) {
   bodyA.gameObject.setTint(0xff0000);
+}
+
+function update() {
+  graphics.clear();
+  graphics.lineStyle(5, 0x0000ff, 1);
+  graphics.strokeCircleShape(mouseCircle);
+  graphics.fillStyle(0x00ff00, 1);
+  graphics.fillCircleShape(mouseCircle);
 }
