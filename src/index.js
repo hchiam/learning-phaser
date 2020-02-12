@@ -156,6 +156,7 @@ function hitBomb(player, bomb) {
   // this.physics.pause();
   player.setTint(0xff0000);
   player.anims.play('turn');
+  scoreText.setText('Score: ' + score + ' - GAME OVER');
   gameOver = true;
   platforms.children.iterate(function(child) {
     child.disableBody(true, true);
