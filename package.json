@@ -5,6 +5,7 @@
   "description": "Learning the updated version 3 https://github.com/photonstorm/phaser (my old repo: https://github.com/hchiam/phaserGame) (This file was first created using the Yeoman generator generator-hchiam-learning: https://www.npmjs.com/package/generator-hchiam-learning",
   "main": "src/index.js",
   "scripts": {
+    "go": "yarn webpack-build; surge dist https://hchiam-phaser-test.surge.sh; open -a 'Firefox' https://hchiam-phaser-test.surge.sh;",
     "build": "yarn webpack-build; yarn surge-build",
     "start": "yarn webpack-start",
     "webpack-build": "webpack --config webpack/prod.js",
