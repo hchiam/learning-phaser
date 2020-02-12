@@ -9,7 +9,7 @@ import css from './style.css'; // eslint-disable-line no-unused-vars
 
 const config = {
   type: Phaser.AUTO,
-  parent: 'phaser-example',
+  parent: 'phaser-container',
   width: 800,
   height: 600,
   physics: {
@@ -22,8 +22,7 @@ const config = {
   },
 };
 
-// eslint-disable-next-line no-unused-vars
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(config); // eslint-disable-line no-unused-vars
 let graphics;
 let mouseCircle;
 
@@ -53,7 +52,9 @@ function create() {
   //   loop: -1,
   // });
 
-  _2DNote.setAs2DArea(document.getElementsByTagName('canvas'));
+  // _2DNote setup
+  _2DNote.setAs2DArea(document.getElementById('phaser-container'));
+
   this.input.keyboard.on('keydown-SPACE', function() {
     alert('You hit the spacebar!');
   });
@@ -68,17 +69,7 @@ function create() {
 
   this.input.keyboard.on('keydown-S', function() {
     // alert('You hit the S key');
-    const screenWidth = document.documentElement.clientWidth;
-    const screenHeight = document.documentElement.clientHeight;
-    const simulatedCenterClick = { // center: guaranteed != edge
-      currentTarget: true,
-      clientX: screenWidth / 2,
-      clientY: screenHeight / 2,
-    };
-    _2DNote.play(simulatedCenterClick);
-    setTimeout(function() {
-      _2DNote.stop();
-    }, 100);
+    beep();
   });
 
   this.input.keyboard.on('keydown-D', function() {
@@ -95,6 +86,20 @@ function create() {
 
 function collide(bodyA, bodyB, axis) {
   bodyA.gameObject.setTint(0xff0000);
+}
+
+function beep() {
+  const screenWidth = document.documentElement.clientWidth;
+  const screenHeight = document.documentElement.clientHeight;
+  const simulatedCenterClick = { // center: guaranteed != edge
+    currentTarget: true,
+    clientX: screenWidth / 2,
+    clientY: screenHeight / 2,
+  };
+  _2DNote.play(simulatedCenterClick);
+  setTimeout(function() {
+    _2DNote.stop();
+  }, 100);
 }
 
 function update() {

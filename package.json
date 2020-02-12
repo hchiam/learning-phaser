@@ -21,7 +21,7 @@
   "author": "hchiam",
   "license": "MIT",
   "dependencies": {
-    "2dnote": "^1.8.0",
+    "2dnote": "^1.8.2",
     "phaser": "^3.22.0"
   },
   "devDependencies": {

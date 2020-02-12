@@ -27,8 +27,6 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-/**
- * This file was first created using the Yeoman generator
- * generator-hchiam-learning:
- * https://www.npmjs.com/package/generator-hchiam-learning
- */
+#phaser-container {
+  display: inline-block;
+}
