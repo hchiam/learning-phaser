@@ -1,0 +1,38 @@
+* {
+  background: rgb(32,32,32);
+  color: whitesmoke;
+  font-family: avenir, arial, helvetica, sans-serif;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+body {
+  background: rgb(32,32,32);
+  margin: 0;
+}
+
+button {
+  padding: 10px;
+}
+
+button:hover, button:focus {
+  background: lime;
+  color: black;
+}
+
+a:hover, a:focus {
+  color: lime;
+}
+
+*:focus {
+  text-decoration: underline;
+}
+
+#phaser-container {
+  display: inline-block;
+}
+
+canvas {
+  display: table;
+  margin: 0 auto;
+}
