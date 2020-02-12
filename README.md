@@ -10,7 +10,7 @@ Phaser 3 webpack project template: <https://github.com/photonstorm/phaser3-proje
 
 More examples to learn from: <https://phaser.io/examples/v3>
 
-Phaser 3 guide: <https://phaser.io/tutorials/getting-started-phaser3/index>
+Phaser 3 guide: <https://phaser.io/tutorials/getting-started-phaser3/index> and <https://phaser.io/tutorials/making-your-first-phaser-3-game/part1>
 
 ## Using this repo
 
