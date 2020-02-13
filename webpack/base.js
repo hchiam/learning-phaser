@@ -46,7 +46,14 @@ module.exports = {
       WEBGL_RENDERER: JSON.stringify(true),
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      filename: 'index.html',
+      template: 'src/index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'test.html',
+      template: 'src/test.html',
+      chunks: ['test'],
     }),
   ],
 };
