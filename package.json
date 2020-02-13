@@ -8,10 +8,8 @@
     "go": "yarn parcel-build; surge dist https://hchiam-phaser-test.surge.sh; open -a 'Firefox' https://hchiam-phaser-test.surge.sh;",
     "build": "yarn parcel-build; yarn surge-build",
     "start": "yarn parcel-start; open http://localhost:1234",
-    "parcel-build": "parcel build src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache",
-    "parcel-start": "parcel src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache",
-    "webpack-build": "yarn fix; webpack --config webpack/prod.js",
-    "webpack-start": "echo; echo '(Will auto-reload upon file save.)'; echo; yarn fix; webpack-dev-server --config webpack/base.js --open;",
+    "parcel-build": "yarn fix; parcel build src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache --no-source-maps",
+    "parcel-start": "echo; echo '(Will auto-reload upon file save.)'; echo; yarn fix; parcel src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache",
     "surge-build": "yarn fix; bash publish_live_site.sh",
     "surge-start": "yarn open",
     "test": "jest --passWithNoTests",
@@ -27,26 +25,12 @@
     "phaser": "^3.22.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.4.2",
+    "@babel/core": "^7.8.4",
     "eslint": "^6.4.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-loader": "^3.0.3",
-    "file-loader": "^4.2.0",
-    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
     "jest-cli": "^24.9.0",
-    "parcel-bundler": "^1.12.4",
-    "raw-loader": "^3.1.0",
-    "style-loader": "^1.1.3",
-    "terser-webpack-plugin": "^2.2.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "parcel-bundler": "^1.12.4"
   },
   "husky": {
     "hooks": {
