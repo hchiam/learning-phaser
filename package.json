@@ -7,7 +7,7 @@
   "scripts": {
     "go": "yarn parcel-build; surge dist https://hchiam-phaser-test.surge.sh; open -a 'Firefox' https://hchiam-phaser-test.surge.sh;",
     "build": "yarn parcel-build; yarn surge-build",
-    "start": "yarn parcel-start; open http://localhost:1234",
+    "start": "yarn parcel-start & open http://localhost:1234",
     "parcel-build": "yarn fix; parcel build src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache --no-source-maps",
     "parcel-start": "echo; echo '(Will auto-reload upon file save.)'; echo; yarn fix; parcel src/index.html src/test-multiple-entry-points/test.html --out-dir dist --cache-dir .cache",
     "surge-build": "yarn fix; bash publish_live_site.sh",
