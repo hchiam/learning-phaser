@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "w-build": "webpack --config webpack/prod.js",
-    "w-start": "echo; echo '(Will auto-reload upon file save.)'; echo; webpack-dev-server --config webpack/base.js --open;"
+    "build": "webpack --config webpack/prod.js",
+    "start": "echo; echo '(Will auto-reload upon file save.)'; echo; webpack-dev-server --config webpack/base.js --open;"
   },
   "author": "hchiam",
   "license": "MIT",

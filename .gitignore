@@ -15,5 +15,6 @@ dist/
 
 # more stuff
 dist
+.cache
 coverage
 your_first_commit.sh

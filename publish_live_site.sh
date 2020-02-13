@@ -21,11 +21,11 @@ function openInFirefox() {
 
 installSurgeIfMissing
 
-read -p "Use default $folderToUse folder? " useDefaultFolder
+read -p "Use default $folderToUse folder for surge deploy? " useDefaultFolder
 
 # keep asking until given a response
 while [ -z "$useDefaultFolder" ]; do
-  read -p "Use default $folderToUse folder? " useDefaultFolder
+  read -p "Use default $folderToUse folder for surge deploy? " useDefaultFolder
 done
 
 re='(y|Y)(es|up|eah)?'
